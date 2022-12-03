@@ -6,10 +6,16 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { icon } from "leaflet";
 
 function App() {
+
+  const rarestbirds = [
+    {name: "Cebu Flowerpecker", url: "https://xeno-canto.org/api/2/recordings?query=gen:Dicaeum%20quadricolor"},
+    {name: "Superb Lyrebird", url: "https://xeno-canto.org/api/2/recordings?query=gen:menura"},
+    {name: "Stresemann's Bristlefront", url: "https://xeno-canto.org/api/2/recordings?query=gen:Merulaxis%20stresemanni"},
+    
+  ]
   return (
     <>
-      <Title />
-      <BirdContainer />
+      <BirdContainer rarestbirds={rarestbirds} />
     </>
   );
 }

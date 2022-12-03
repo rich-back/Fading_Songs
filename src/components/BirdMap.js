@@ -17,7 +17,7 @@ const BirdMap = ({ birds }) => {
 
   return (
 <>
-    <MapContainer center={[55.9533, -3.1883]} zoom={11} scrollWheelZoom={false}>
+    <MapContainer center={[55.9533, -3.1883]} zoom={2} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
