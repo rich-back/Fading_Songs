@@ -16,15 +16,20 @@ const BirdList = ({birds}) => {
         // </ul>
         // </>
 
-        <div>
+        <div className="bird-list">
+
             {birds.map((bird, index) => {
             return (
+
+                <>
+                <h4>Recordings of the {bird.en}</h4>
                 <Bird
                     bird={bird} 
                     key={index}
                     image={bird.sono.small}
                     audio={bird.file}
                 />
+                </>
             )
         })}
         </div>

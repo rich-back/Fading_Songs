@@ -16,7 +16,7 @@ const Bird = ({bird, image, audio, index}) => {
 
     return(
         <div className="bird-container">
-        <figure>
+        {/* <figure>
             <figcaption>Listen to the {bird.en}:</figcaption>
              <audio
             controls
@@ -25,7 +25,7 @@ const Bird = ({bird, image, audio, index}) => {
                 Download audio
                 </a>
             </audio>
-        </figure>
+        </figure> */}
 
         {/* <img src={image}></img> */}
 

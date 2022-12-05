@@ -1,6 +1,6 @@
 import { MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
 // import birdicon from "./images/bird-icon.png"
-import L from "leaflet";
+import L, { map } from "leaflet";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -15,37 +15,42 @@ const BirdMap = ({ birds }) => {
 
 
 
+
   return (
 <>
-    <MapContainer center={[55.9533, -3.1883]} zoom={2} scrollWheelZoom={false}>
+    <MapContainer center={[0,0]} zoom={2} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-
+    
       {birds.map((bird) => {
         return <Marker 
+        
         icon={birdIcon}
         key={bird.id}
-        position={[bird.lat, bird.lng]}>
+        position={[bird.lat, bird.lng]}
+        riseOnHover={true}>
         <Popup>
-            {bird.sex}{bird.en}<br></br>
-            recorded by {bird.rec}
-            <img src={bird.sono.small}/>
+            You are listening to:<br></br>
+            The {bird.sex} {bird.en}<br></br>
+            <strong><i>{bird.gen} {bird.sp}</i></strong><br></br>
+            recorded at {bird.loc} by {bird.rec} on {bird.date} at {bird.time}
+            <img className='sono' src={bird.sono.small}/>
             <figure>
              <audio
+            className="audio"
             controls
             src={bird.file}>
             </audio>
             <figcaption>Listen to the {bird.en}:</figcaption>
             </figure>
-
+            
 
         </Popup>
         </Marker>;
       })}
     </MapContainer>
-
 
 </>
 
