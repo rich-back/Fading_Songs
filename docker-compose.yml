@@ -1,0 +1,9 @@
+version: '2.13.0'
+services:
+  call_of_the_wild:
+    build: ./
+    container_name: call_of_the_wild_c
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true

@@ -11,7 +11,7 @@ background-image: linear-gradient(180deg, #7F8C8D, #000000)
   font-family: 'Rubik Distressed', cursive;
   color: antiquewhite;
   font-size: 48pt;
-  height: 9vh;  
+  height: 7vh;  
   text-align: center;
   
 }
@@ -42,7 +42,7 @@ background-image: linear-gradient(180deg, #7F8C8D, #000000)
 .leaflet-popup-content-wrapper {
   color: antiquewhite;
   background-color: #8a8a8a;
-  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");  
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png") ;  
   border: 1px solid goldenrod;
 	padding: 1px;
 	text-align: left;
