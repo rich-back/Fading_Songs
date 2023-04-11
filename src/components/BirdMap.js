@@ -1,8 +1,7 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import L, { map } from "leaflet";
+import L from "leaflet";
 
 const BirdMap = ({ birds }) => {
-  
   const birdIcon = L.icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/512/8845/8845053.png",
     iconSize: [45, 70],
@@ -11,13 +10,13 @@ const BirdMap = ({ birds }) => {
   });
 
   return (
-    <>
-      <MapContainer center={[0, 0]} zoom={2} scrollWheelZoom={false}>
+    <div className="map-container">
+      <MapContainer center={[20, 0]} zoomSnap={0.2} zoom={2.2} scrollWheelZoom={true} zoomControl={true}>
+      
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
         {birds
           .filter((bird) => bird.lat !== null)
           .map((bird) => {
@@ -40,7 +39,11 @@ const BirdMap = ({ birds }) => {
                   <br></br>
                   recorded at {bird.loc} by {bird.rec} on {bird.date} at{" "}
                   {bird.time}
-                  <img className="sono" src={bird.sono.small} />
+                  <img
+                    className="sono"
+                    src={bird.sono.small}
+                    alt={`sonograph for the ${bird.en}`}
+                  />
                   <figure>
                     <audio className="audio" controls src={bird.file}></audio>
                     <figcaption>Listen to the {bird.en}:</figcaption>
@@ -50,7 +53,7 @@ const BirdMap = ({ birds }) => {
             );
           })}
       </MapContainer>
-    </>
+    </div>
   );
 };
 
