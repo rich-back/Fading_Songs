@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BirdMap from "../components/BirdMap";
+import Footer from "../components/Footer";
 import Title from "../components/Title";
 
 const BirdContainer = ({ rarestbirds }) => {
@@ -7,6 +8,7 @@ const BirdContainer = ({ rarestbirds }) => {
 
   useEffect(() => {
     getBirds(rarestbirds[0].url);
+    // eslint-disable-next-line
   }, []);
 
   const getBirds = (url) => {
@@ -23,16 +25,11 @@ const BirdContainer = ({ rarestbirds }) => {
   };
 
   return (
-    <>
-      <Title
-        handleSelectChange={handleSelectChange}
-        rarestbirds={rarestbirds}
-      />
-
-      <div className="main-container">
-        <BirdMap birds={birds} handleSelectChange={handleSelectChange} />
-      </div>
-    </>
+    <div className="page">
+      <Title handleSelectChange={handleSelectChange} rarestbirds={rarestbirds} />
+      <BirdMap birds={birds} />
+      <Footer />
+    </div>
   );
 };
 

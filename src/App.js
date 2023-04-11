@@ -64,18 +64,7 @@ function App() {
     },
   ];
   return (
-    <>
       <BirdContainer rarestbirds={rarestbirds} />
-
-      <p className="footer">
-        Click the
-        <img
-          className="bird-icon"
-          src="https://cdn-icons-png.flaticon.com/512/8845/8845053.png"
-        ></img>
-        to listen to a recording...{" "}
-      </p>
-    </>
   );
 }
 
