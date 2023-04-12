@@ -47,6 +47,7 @@ body {
   width: 90vw;
   height: 70vh;
   border-radius: 5px;
+  border: 2px solid antiquewhite;
 }
 
 .leaflet-popup {
