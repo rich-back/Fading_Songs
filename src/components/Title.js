@@ -1,7 +1,6 @@
 import React from "react";
 
 function Title({ handleSelectChange, rarestbirds }) {
-
   return (
     <div className="container">
       <h1 className="title">Listen to the Rarest Birds in the World...</h1>
@@ -23,19 +22,24 @@ function Title({ handleSelectChange, rarestbirds }) {
       </div>
 
       <div className="selector-container">
-        <select className="selector" onChange={handleSelectChange} name={"Select a bird"}>
+        <select
+          className="selector"
+          onChange={handleSelectChange}
+        >
+          <option selected hidden>Select a bird from the list...</option>
           {rarestbirds.map((rarestbird) => {
             return (
-              <option defaultValue={'sds'} key={rarestbird.name} value={rarestbird.url}>
-                {rarestbird.name}
-              </option>
+              <>
+                <option key={rarestbird.name} value={rarestbird.url}>
+                  {rarestbird.name}
+                </option>
+              </>
             );
           })}
         </select>
-
       </div>
     </div>
   );
-};
+}
 
 export default Title;
