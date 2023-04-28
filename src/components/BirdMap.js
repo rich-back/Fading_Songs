@@ -11,8 +11,13 @@ const BirdMap = ({ birds }) => {
 
   return (
     <div className="map-container">
-      <MapContainer center={[20, 0]} zoomSnap={0.2} zoom={2.2} scrollWheelZoom={true} zoomControl={true}>
-      
+      <MapContainer
+        center={[20, 0]}
+        zoomSnap={0.2}
+        zoom={2.2}
+        scrollWheelZoom={true}
+        zoomControl={true}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -28,6 +33,15 @@ const BirdMap = ({ birds }) => {
                 riseOnHover={true}
               >
                 <Popup>
+                  <iframe
+                    src={`https://xeno-canto.org/${bird.id}/embed`}
+                    frameborder="0"
+                    width="350"
+                    height="220"
+                  ></iframe>
+                </Popup>
+
+                {/* <Popup>
                   You are listening to:<br></br>
                   The {bird.sex} {bird.en}
                   <br></br>
@@ -42,13 +56,13 @@ const BirdMap = ({ birds }) => {
                   <img
                     className="sono"
                     src={bird.sono.small}
-                    alt={`sonograph for the ${bird.en}`}
+                    alt={`sonograph for the ${bird.en}`} 
                   />
                   <figure>
                     <audio className="audio" controls src={bird.file}></audio>
-                    <figcaption>Listen to the {bird.en}:</figcaption>
+                    <figcaption>Listen to the {bird.en}: © Xeno-canto Foundation</figcaption>
                   </figure>
-                </Popup>
+                </Popup> */}
               </Marker>
             );
           })}

@@ -56,9 +56,9 @@ body {
 
 .leaflet-popup-content-wrapper {
   color: antiquewhite;
-  background-color: #8a8a8a;
+  background-color: #ebebeb;
   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
-  border: 1px solid goldenrod;
+  border: 1px solid rgba(200, 200, 200, 0.79);
   padding: 1px;
   text-align: left;
   border-radius: 12px;
@@ -66,6 +66,15 @@ body {
 }
 .leaflet-container a.leaflet-popup-close-button {
   color: antiquewhite;
+  font-weight: 800;
+}
+
+.leaflet-popup-tip {
+  background: #ebebeb;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  border: 1px solid rgba(200, 200, 200, 0.79);
+  color: #333;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 }
 
 .sono {
