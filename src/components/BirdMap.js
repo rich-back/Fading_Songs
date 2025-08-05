@@ -29,7 +29,7 @@ const BirdMap = ({ birds }) => {
               <Marker
                 icon={birdIcon}
                 key={bird.id}
-                position={[bird.lat, bird.lng]}
+                position={[bird.lat, bird.lon]}
                 riseOnHover={true}
               >
                 <Popup>
